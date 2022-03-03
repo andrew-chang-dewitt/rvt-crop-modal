@@ -10,7 +10,7 @@ module.exports = defineConfig({
       fileName: (format) => `rvt-crop-modal.${format}.js`,
     },
     rollupOptions: {
-      external: ["rvt-uits", "croppie"],
+      external: ["rivet-uits", "croppie"],
       output: {
         globals: {
           modal: "Modal",
