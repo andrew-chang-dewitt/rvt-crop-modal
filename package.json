@@ -2,7 +2,17 @@
   "name": "rvt-crop-modal",
   "version": "0.0.1-alpha.0",
   "description": "IU Rivet-based modal widget for cropping images",
-  "main": "dist/index.js",
+  "main": "./dist/rvt-crop-modal.umd.js",
+  "module": "./dist/rvt-crop-modal.es.js",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/rvt-crop-modal.es.js",
+      "require": "./dist/rvt-crop-modal.umd.js"
+    }
+  },
   "scripts": {
     "test": "ts-mocha src/**/*.spec.ts",
     "dev": "vite",
