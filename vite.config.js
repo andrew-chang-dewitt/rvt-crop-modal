@@ -1,4 +1,7 @@
-export default {
+const path = require('path')
+const {defineConfig} = require('vite')
+
+module.exports = defineConfig({
   // build as a library
   build: {
     lib: {
@@ -16,4 +19,4 @@ export default {
       }
     }
   }
-}
+})
