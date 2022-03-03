@@ -1,10 +1,13 @@
 {
-  "name": "crop-modal",
+  "name": "rvt-crop-modal",
   "version": "0.0.1-alpha.0",
   "description": "IU Rivet-based modal widget for cropping images",
   "main": "dist/index.js",
   "scripts": {
-    "test": "ts-mocha src/**/*.spec.ts"
+    "test": "ts-mocha src/**/*.spec.ts",
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
   },
   "repository": {
     "type": "git",
@@ -15,5 +18,20 @@
   "bugs": {
     "url": "https://github.com/andrew-chang-dewitt/rvt-crop-modal/issues"
   },
-  "homepage": "https://github.com/andrew-chang-dewitt/rvt-crop-modal#readme"
+  "homepage": "https://github.com/andrew-chang-dewitt/rvt-crop-modal#readme",
+  "devDependencies": {
+    "@types/chai": "^4.3.0",
+    "@types/mocha": "^9.1.0",
+    "chai": "^4.3.6",
+    "mocha": "^9.2.1",
+    "prettier": "^2.5.1",
+    "ts-mocha": "^9.0.2",
+    "ts-node": "^10.6.0",
+    "typescript": "^4.6.2",
+    "vite": "^2.8.0"
+  },
+  "dependencies": {
+    "croppie": "^2.6.5",
+    "rivet-uits": "^1.8.2"
+  }
 }
