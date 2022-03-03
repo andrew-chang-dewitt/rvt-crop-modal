@@ -1,0 +1,19 @@
+{
+  "name": "crop-modal",
+  "version": "0.0.1-alpha.0",
+  "description": "IU Rivet-based modal widget for cropping images",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "ts-mocha src/**/*.spec.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrew-chang-dewitt/rvt-crop-modal.git"
+  },
+  "author": "Andrew Chang-DeWitt",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andrew-chang-dewitt/rvt-crop-modal/issues"
+  },
+  "homepage": "https://github.com/andrew-chang-dewitt/rvt-crop-modal#readme"
+}
