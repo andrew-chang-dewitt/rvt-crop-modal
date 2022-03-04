@@ -1,8 +1,19 @@
 import './style.css'
 import 'rivet-uits/css/rivet.css'
+import demoImg from './static/demo.jpg'
 
-const app = document.querySelector<HTMLDivElement>('#app')!
+import {CropModal} from './CropModal'
 
-app.innerHTML = `
-  <button type="button" class="rvt-button" data-modal-trigger="modal-example-basic">Open modal example</button>
-`
+const openButton = document.getElementById('review-button')!
+const resultDiv = document.getElementById('result')!
+
+function handleResult(img: Blob) {
+  var imageEl: HTMLImageElement = document.createElement('img')
+  imageEl.src = window.URL.createObjectURL(img)
+
+  console.dir(imageEl)
+
+  resultDiv.appendChild(imageEl)
+}
+
+CropModal(openButton, 'uniqueID', demoImg, handleResult)

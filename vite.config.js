@@ -5,7 +5,7 @@ module.exports = defineConfig({
   // build as a library
   build: {
     lib: {
-      entry: path.resolve(__dirname, 'src/main.ts'),
+      entry: path.resolve(__dirname, 'src/CropModal'),
       name: "CropModalLib",
       fileName: (format) => `rvt-crop-modal.${format}.js`,
     },

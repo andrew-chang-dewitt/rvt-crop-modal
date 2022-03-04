@@ -1,6 +1,9 @@
-// dependencies
+# dependencies
 node_modules/
 
-// vim files
+# vim files
 *.swo
 *.swp
+
+# built files
+dist/
