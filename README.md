@@ -6,7 +6,7 @@ A simple JavaScript function to insert the markup for a Rivet Modal that prompts
 Installation
 ---
 
-Depending on your needs, download either the ESM or UMD version of the library from [the latest release](). _**FIXME: create release & insert link here.**_
+Depending on your needs, download either the ESM or UMD version of the library from [the latest release](https://github.com/andrew-chang-dewitt/rvt-crop-modal/releases). 
 Import file w/ script tag or otherwise in your build system.
 
 _**TODO:**_ package for installation via NPM; currently not supported.
