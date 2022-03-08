@@ -24,28 +24,87 @@ Usage
 
 `rvt-crop-modal` exports a single function, `CropModal`, with the following signature:
 
-```typescript:example/src/CropModal/index.ts [54-59]
+```typescript
+function CropModal(
+  openButton: HTMLElement,
+  id: string,
+  imgSrc: string,
+  handleResult: ResultHandler
+): null
 ```
 
 To use it, simply get a reference to the button your users will click to trigger the modal:
 
-```typescript
+```javascript
 const openButton = document.getElementById('review-button')
 ```
 
 and create a handler to call when the modal's 'OK' button is clicked:
 
-```javascript:example/index.html [26-35]
+```javascript
+// a trivial handler that just renders the returned blob
+function handleResult(img) {
+  // create an empty image element
+  var imageEl = document.createElement('img')
+  // create a url from the blob
+  imageEl.src = window.URL.createObjectURL(img)
+
+  // add the image element to the result div
+  resultDiv.appendChild(imageEl)
+}
 ```
 
-then call the `CropModal` function:
+then call the `CropModal` function, passing the reference to the button, a unique string to give as an ID for the modal & related elements, a path to your image that needs cropped, & a reference to the handler you wrote:
 
-```javascript:example/index.html [37]
+```typescript 
+CropModalLib.CropModal(openButton, 'aUniqueID', './demo.jpg', handleResult)
 ```
 
 ### Example
 
 All the code above is contained in a single working example located at `./example/`:
 
-```html:example/index.html
+`example/index.html`
+```typescript
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rivet Crop Modal Demo</title>
+    <link href="./rivet.min.css" rel="stylesheet" />
+    <link href="./croppie.css" rel="stylesheet" />
+</head>
+
+<body>
+    <button id="review-button" type="button" class="rvt-button">Review image</button>
+
+    <h2>Result:</h2>
+
+    <div id="result"></div>
+
+    <script src="./rivet.min.js"></script>
+    <script src="./croppie.js"></script>
+    <script src="./rvt-crop-modal.umd.js"></script>
+    <script>
+        const openButton = document.getElementById('review-button')
+        const resultDiv = document.getElementById('result')
+
+        // a trivial handler that just renders the returned blob
+        function handleResult(img) {
+            // create an empty image element
+            var imageEl = document.createElement('img')
+            // create a url from the blob
+            imageEl.src = window.URL.createObjectURL(img)
+
+            // add the image element to the result div
+            resultDiv.appendChild(imageEl)
+        }
+
+        CropModalLib.CropModal(openButton, 'aUniqueID', './demo.jpg', handleResult)
+    </script>
+</body>
+
+</html>
 ```
