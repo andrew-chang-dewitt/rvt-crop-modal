@@ -62,7 +62,19 @@ CropModalLib.CropModal(openButton, 'aUniqueID', './demo.jpg', handleResult)
 
 ### Example
 
-All the code above is contained in a single working example located at `./example/`:
+All the code above is contained in a working example located at `./example/`.
+This example is as simple as possible, containing all the user code in `index.html` & the required libraries, stylesheets, & image in the same directory:
+
+```
+./example
+|_ /index.html
+|_ /demo.jpg
+|_ /rvt-crop-modal.umd.js
+|_ /croppe.css
+|_ /croppie.min.js
+|_ /rivet.min.css
+|_ /rivet.min.js
+```
 
 `example/index.html`
 ```typescript
